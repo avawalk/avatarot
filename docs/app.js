@@ -22,6 +22,8 @@ const majorArcana = [
     { name: "Judgement", image: "assets/tarot/judgement.jpg", meaning: "Reflection, reckoning, awakening", score: 80 },
     { name: "The World", image: "assets/tarot/the-world.jpg", meaning: "Completion, wholeness, accomplishment", score: 95 }
 ];
+let img_host = "https://avawalk.github.io/avatarot";
+majorArcana.forEach(r => { r.image = `${img_host}/${r.image}?t=${+new Date()}`; });
 
 function generateSeed(wallet, date) {
     const combined = wallet + date;
