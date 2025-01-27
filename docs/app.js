@@ -160,10 +160,11 @@ async function displayBoostedTokens() {
 }
 
 async function connectWallet() {
-    if (window.solana && window.solana.isPhantom) {
+    //if (window.solana && window.solana.isPhantom) {
         try {
-            const response = await window.solana.connect();
-            const walletAddress = response.publicKey.toString();
+            //const response = await window.solana.connect();
+            //const walletAddress = response.publicKey.toString();
+            const walletAddress = document.getElementById('phantom-wallet').value.trim();
             document.getElementById('wallet-info').style.display = 'block';
             document.getElementById('wallet-address').textContent = walletAddress;
             document.getElementById('draw-card').style.display = 'inline-block';
@@ -171,9 +172,9 @@ async function connectWallet() {
         } catch (error) {
             console.error("Wallet connection failed:", error);
         }
-    } else {
-        alert("Please install Phantom Wallet!");
-    }
+    //} else {
+    //    alert("Please install Phantom Wallet!");
+    //}
 }
 
 document.getElementById("connect-wallet").addEventListener("click", async () => {
@@ -184,3 +185,6 @@ document.getElementById("connect-wallet").addEventListener("click", async () => 
         });
     }
 });
+
+// focus on wallet input
+document.getElementById("phantom-wallet").focus();

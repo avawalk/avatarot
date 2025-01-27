@@ -136,6 +136,12 @@ button:hover {
     background-color: #3700b3;
 }
 
+#phantom-wallet {
+  padding: 10px 14px;
+  font-size: 14px;
+  width: 250px;
+}
+
 #connect-wallet {
     display: inline-block;
     padding: 10px 20px;
