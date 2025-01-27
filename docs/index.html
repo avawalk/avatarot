@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮AVA TAROT🔮 : Let AVA predict your wallet fortune.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="assets/videos/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="overlay" style="display: none;"></div>
+
+    <video id="prediction-video" style="display: none;" autoplay muted>
+        <source src="assets/videos/prediction.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="content">
+        <h1>🔮 AVA 🔮</h1>
+        <h3>The Wallet Prophet</h3>
+        <h5>Checking your wallet's fortune before trading every day.</h5>
+
+        <a href="https://dexscreener.com/solana/k7figcc72ps3tzthcm1h8sr3bfbaetdjgvc8b7o2nna" target="_blank" id="buy-gypsy-button">BUY AVA</a>
+
+        <button id="connect-wallet">Connect Phantom Wallet</button>
+
+        <div id="wallet-info" style="display: none;">
+            <p>Wallet Connected: <span id="wallet-address"></span></p>
+        </div>
+
+        <button id="draw-card" style="display: none;">Draw a Tarot Card</button>
+
+        <div id="tarot-container">
+            <div class="card">
+                <img src="assets/tarot/back-of-card.jpg" alt="Back of Card">
+                <p class="card-name" style="display: none;"></p>
+            </div>
+            <div class="card">
+                <img src="assets/tarot/back-of-card.jpg" alt="Back of Card">
+                <p class="card-name" style="display: none;"></p>
+            </div>
+            <div class="card">
+                <img src="assets/tarot/back-of-card.jpg" alt="Back of Card">
+                <p class="card-name" style="display: none;"></p>
+            </div>
+        </div>
+
+        <div id="fortune-result" style="display: none;">
+            <h2>Your Wallet's Fortune Score: <span id="fortune-score"></span></h2>
+            <h3>Crypto vibes check! Today, Your wallet is at level <span id="fortune-grade"></span></h3>
+            <p id="fortune-advice"></p>
+        </div>
+
+        <div id="boosted-tokens" style="display: none;">
+            <h3 id="boosted-tokens-header" style="display: none;">🎲 Try Your Luck 🎲</h3>
+            <p id="loading-message">Loading for Tokens...</p>
+            <div id="boosted-tokens-list"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
