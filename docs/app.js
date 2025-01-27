@@ -165,6 +165,10 @@ async function connectWallet() {
             //const response = await window.solana.connect();
             //const walletAddress = response.publicKey.toString();
             const walletAddress = document.getElementById('phantom-wallet').value.trim();
+            if (!walletAddress) {
+              document.getElementById("phantom-wallet").focus();
+              return;
+            }
             document.getElementById('wallet-info').style.display = 'block';
             document.getElementById('wallet-address').textContent = walletAddress;
             document.getElementById('draw-card').style.display = 'inline-block';
