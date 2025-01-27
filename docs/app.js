@@ -115,7 +115,7 @@ function drawThreeCards(walletAddress) {
         fortuneAdvice.textContent = advice;
         fortuneResult.style.display = 'block';
 
-        await displayBoostedTokens();
+        //await displayBoostedTokens();
     };
 }
 
