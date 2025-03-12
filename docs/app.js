@@ -118,6 +118,7 @@ function drawThreeCards(walletAddress) {
         fortuneResult.style.display = 'block';
 
         //await displayBoostedTokens();
+        $('#tarot-container').slideDown();
     };
 }
 
@@ -174,6 +175,8 @@ async function connectWallet() {
             document.getElementById('wallet-info').style.display = 'block';
             document.getElementById('wallet-address').textContent = walletAddress;
             document.getElementById('draw-card').style.display = 'inline-block';
+            $('#tarot-container').slideUp();
+            $('#fortune-result').hide();
             return walletAddress;
         } catch (error) {
             console.error("Wallet connection failed:", error);
@@ -187,6 +190,7 @@ document.getElementById("connect-wallet").addEventListener("click", async () => 
     const walletAddress = await connectWallet();
     if (walletAddress) {
         document.getElementById("draw-card").addEventListener("click", () => {
+            $('#tarot-container').hide();
             drawThreeCards(walletAddress);
         });
     }
@@ -194,3 +198,4 @@ document.getElementById("connect-wallet").addEventListener("click", async () => 
 
 // focus on wallet input
 document.getElementById("phantom-wallet").focus();
+$('#tarot-container').hide();
