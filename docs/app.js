@@ -46,6 +46,7 @@ function seededRandom(seed) {
     return seed / modulus;
 }
 
+let gallery = null;
 function drawThreeCards(walletAddress) {
     const overlay = document.getElementById('overlay');
     const predictionVideo = document.getElementById('prediction-video');
@@ -75,9 +76,11 @@ function drawThreeCards(walletAddress) {
 
         const allCards = document.querySelectorAll('.card img');
         const cardNames = document.querySelectorAll('.card-name');
+        const wrappers = document.querySelectorAll('.card');
         allCards.forEach((card, index) => {
             card.src = selectedCards[index].image;
             card.alt = selectedCards[index].name;
+            wrappers[index].dataset.src = card.src;
         });
         cardNames.forEach((name, index) => {
             name.textContent = selectedCards[index].name;
@@ -119,6 +122,10 @@ function drawThreeCards(walletAddress) {
 
         //await displayBoostedTokens();
         $('#tarot-container').slideDown();
+
+        // init gallery from cards
+        if (gallery !== null) gallery.destroy();
+        gallery = lightGallery(document.getElementById('tarot-container'), { selector: '.card' });
     };
 }
 

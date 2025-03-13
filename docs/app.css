@@ -5,6 +5,9 @@
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
+.card {
+  cursor: pointer;
+}
 .links {
   position: absolute;
   top: 10px;
@@ -20,7 +23,11 @@
   bottom: 10px;
   height: 250px;
 }
-.card { /* 2x */
-  width: 160px;
-  height: 240px;
+
+/* responsive */
+@media (min-width: 600px) {
+  .card { /* 2x */
+    width: 160px;
+    height: 240px;
+  }
 }
